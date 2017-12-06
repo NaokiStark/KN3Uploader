@@ -9,7 +9,7 @@ namespace KN3Uploader
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Puto el que lee y compila esto
         /// </summary>
         [STAThread]
         static void Main()
