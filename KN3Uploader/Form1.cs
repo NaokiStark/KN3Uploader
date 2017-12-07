@@ -129,7 +129,7 @@ namespace KN3Uploader
 
                         waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
 
-                        SoundPlayer simpleSound = new SoundPlayer(@"uploaded.wav");
+                        SoundPlayer simpleSound = new SoundPlayer(Path.Combine(Application.StartupPath, "uploaded.wav"));
 
                         simpleSound.Play();
                     }
@@ -181,9 +181,10 @@ namespace KN3Uploader
                 notifyIcon1.ShowBalloonTip(5, "Fallo la subida", listView1.Items[uploadIndex].SubItems[0].Text, ToolTipIcon.Error);
             }
 
-            File.Delete(files.First());
-            files.Remove(files.First());
-            
+            if(file.StartsWith("clipboard_"))
+                File.Delete(file);
+
+            //files.Remove(files.First());           
 
             uploadIndex++;
         }
