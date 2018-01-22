@@ -11,13 +11,6 @@ namespace KN3Uploader
 {
     public class Uploader
     {
-
-
-        public Uploader()
-        {
-
-        }
-
         public Task<string> Upload(string actionUrl, string fileName, Stream paramFileStream)
         {
 
