@@ -13,13 +13,12 @@ namespace KN3Uploader
     {
         public Task<string> Upload(string actionUrl, string fileName, Stream paramFileStream)
         {
-
             FileInfo file = new FileInfo(fileName);
+            
             if (!file.Exists)
                 return Task<string>.Factory.StartNew(() => "");
 
             HttpContent fileStreamContent = new StreamContent(paramFileStream);
-
 
             using (var client = new HttpClient())
             {
